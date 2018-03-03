@@ -1,0 +1,2296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="3.2" jmeter="3.2 r1790748">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="POA" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">2</stringProp>
+        <longProp name="ThreadGroup.start_time">1476790114000</longProp>
+        <longProp name="ThreadGroup.end_time">1476790114000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="poa_url" elementType="Argument">
+              <stringProp name="Argument.name">poa_url</stringProp>
+              <stringProp name="Argument.value">https://preprod-apm.predix.com/poa-uat/</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">POA UAT url</stringProp>
+            </elementProp>
+            <elementProp name="username" elementType="Argument">
+              <stringProp name="Argument.name">username</stringProp>
+              <stringProp name="Argument.value">kalakondas</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">POA UAT user name</stringProp>
+            </elementProp>
+            <elementProp name="password" elementType="Argument">
+              <stringProp name="Argument.name">password</stringProp>
+              <stringProp name="Argument.value">p@55Word</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">POA UAT password</stringProp>
+            </elementProp>
+            <elementProp name="username_tb_id" elementType="Argument">
+              <stringProp name="Argument.name">username_tb_id</stringProp>
+              <stringProp name="Argument.value">input[name=username]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Username textbox locator as id</stringProp>
+            </elementProp>
+            <elementProp name="password_tb_id" elementType="Argument">
+              <stringProp name="Argument.name">password_tb_id</stringProp>
+              <stringProp name="Argument.value">input[name=password]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Password textbox locator as id</stringProp>
+            </elementProp>
+            <elementProp name="signin_btn_xpath" elementType="Argument">
+              <stringProp name="Argument.name">signin_btn_xpath</stringProp>
+              <stringProp name="Argument.value">//input[@value=&apos;Sign in&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Login button</stringProp>
+            </elementProp>
+            <elementProp name="dashboard_title_xpath" elementType="Argument">
+              <stringProp name="Argument.name">dashboard_title_xpath</stringProp>
+              <stringProp name="Argument.value">//span[contains(text(),&apos;Overview&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">Dashboard page view default filter</stringProp>
+            </elementProp>
+            <elementProp name="spine_id_link_xpath" elementType="Argument">
+              <stringProp name="Argument.name">spine_id_link_xpath</stringProp>
+              <stringProp name="Argument.value">(//div[@class=&apos;activePopUp style-scope dashboar-header&apos;][contains(@style,&apos;block&apos;)]//a)[1]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="dashboard_module_link" elementType="Argument">
+              <stringProp name="Argument.name">dashboard_module_link</stringProp>
+              <stringProp name="Argument.value">//a//div[contains(text(),&apos;Dashboard&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="spine_sev3_anomalies_count" elementType="Argument">
+              <stringProp name="Argument.name">spine_sev3_anomalies_count</stringProp>
+              <stringProp name="Argument.value">//span[@data-locator-id=&apos;dashboard-spine-sev3-anomalies-count&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="spine_sev1_cases_count" elementType="Argument">
+              <stringProp name="Argument.name">spine_sev1_cases_count</stringProp>
+              <stringProp name="Argument.value">//span[@data-locator-id=&apos;dashboard-spine-sev1-cases-count&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="spine_sev2_cases_count" elementType="Argument">
+              <stringProp name="Argument.name">spine_sev2_cases_count</stringProp>
+              <stringProp name="Argument.value">//span[@data-locator-id=&apos;dashboard-spine-sev2-cases-count&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="spine_sev3_cases_count" elementType="Argument">
+              <stringProp name="Argument.name">spine_sev3_cases_count</stringProp>
+              <stringProp name="Argument.value">//span[@data-locator-id=&apos;dashboard-spine-sev3-cases-count&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="spine_sev1_excursion_count" elementType="Argument">
+              <stringProp name="Argument.name">spine_sev1_excursion_count</stringProp>
+              <stringProp name="Argument.value">//span[@data-locator-id=&apos;dashboard-spine-sev1-excursion-count&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="spine_sev2_excursion_count" elementType="Argument">
+              <stringProp name="Argument.name">spine_sev2_excursion_count</stringProp>
+              <stringProp name="Argument.value">//span[@data-locator-id=&apos;dashboard-spine-sev2-excursion-count&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="spine_sev3_excursion_count" elementType="Argument">
+              <stringProp name="Argument.name">spine_sev3_excursion_count</stringProp>
+              <stringProp name="Argument.value">//span[@data-locator-id=&apos;dashboard-spine-sev3-excursion-count&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="loading_excursions_spine" elementType="Argument">
+              <stringProp name="Argument.name">loading_excursions_spine</stringProp>
+              <stringProp name="Argument.value">//div[@data-locator-id=&apos;dashboard-spine-excursion-section&apos;]//div[contains(@style,&apos;none&apos;)]//div[contains(text(),&apos;Loading excursions&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="loading_anomalies_spine" elementType="Argument">
+              <stringProp name="Argument.name">loading_anomalies_spine</stringProp>
+              <stringProp name="Argument.value">//div[@data-locator-id=&apos;dashboard-spine-anomalies-section&apos;]//div[contains(@style,&apos;none&apos;)]//div[contains(text(),&apos;Loading anomalies&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="loading_cases_spine" elementType="Argument">
+              <stringProp name="Argument.name">loading_cases_spine</stringProp>
+              <stringProp name="Argument.value">//div[@data-locator-id=&apos;dashboard-spine-cases-section&apos;]//div[contains(@style,&apos;none&apos;)]//div[contains(text(),&apos;Loading cases&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="id_info_page" elementType="Argument">
+              <stringProp name="Argument.name">id_info_page</stringProp>
+              <stringProp name="Argument.value">(//div[contains(@class,&apos;exDate&apos;)])[2]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="id_info_page1" elementType="Argument">
+              <stringProp name="Argument.name">id_info_page1</stringProp>
+              <stringProp name="Argument.value">//div[contains(@class,&apos;exDate&apos;)][2]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="id_info_page2" elementType="Argument">
+              <stringProp name="Argument.name">id_info_page2</stringProp>
+              <stringProp name="Argument.value">//div[contains(@class,&apos;exDate&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="name_info_page" elementType="Argument">
+              <stringProp name="Argument.name">name_info_page</stringProp>
+              <stringProp name="Argument.value">//div[contains(@class,&apos;exName&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="heatmap_loading" elementType="Argument">
+              <stringProp name="Argument.name">heatmap_loading</stringProp>
+              <stringProp name="Argument.value">//heat-map[@id=&apos;tDisplayL1&apos;]//div[@class=&apos;loading vspin style-scope vulnerability-map&apos;][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="heatmap_vru1" elementType="Argument">
+              <stringProp name="Argument.name">heatmap_vru1</stringProp>
+              <stringProp name="Argument.value">//div[@id=&apos;VRU1&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="heatmap_vru1_id" elementType="Argument">
+              <stringProp name="Argument.name">heatmap_vru1_id</stringProp>
+              <stringProp name="Argument.value">(//div[@id=&apos;VRU1&apos;]/div[@id=&apos;popUpVRU1&apos;][contains(@style,&apos;block&apos;)]//a)[1]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="heatmap_vru2" elementType="Argument">
+              <stringProp name="Argument.name">heatmap_vru2</stringProp>
+              <stringProp name="Argument.value">//div[@id=&apos;VRU2&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="heatmap_vru2_id" elementType="Argument">
+              <stringProp name="Argument.name">heatmap_vru2_id</stringProp>
+              <stringProp name="Argument.value">(//div[@id=&apos;VRU2&apos;]/div[@id=&apos;popUpVRU2&apos;][contains(@style,&apos;block&apos;)]//a)[1]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="excursion_module_link" elementType="Argument">
+              <stringProp name="Argument.name">excursion_module_link</stringProp>
+              <stringProp name="Argument.value">//li[contains(@id,&apos;excursions&apos;)]//a//div[contains(text(),&apos;Excursions&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="inbox_excursions" elementType="Argument">
+              <stringProp name="Argument.name">inbox_excursions</stringProp>
+              <stringProp name="Argument.value">//uo-im-inbox[@id=&apos;inbox&apos;]/div[@class=&apos;inbox style-scope uo-im-inbox&apos;]/div[@class=&apos;inboxList style-scope uo-im-inbox&apos;]/div[contains(@class,&apos;style-scope uo-im-inbox&apos;)][not(contains(@class,&apos;spinner&apos;))]//ul[contains(@class,&apos;exInboxItemLeft &apos;)]//li[2]/div[not(contains(text(),&apos;Group&apos;))]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="inbox_excursions_random" elementType="Argument">
+              <stringProp name="Argument.name">inbox_excursions_random</stringProp>
+              <stringProp name="Argument.value">(//uo-im-inbox[@id=&apos;inbox&apos;]/div[@class=&apos;inbox style-scope uo-im-inbox&apos;]/div[@class=&apos;inboxList style-scope uo-im-inbox&apos;]/div[contains(@class,&apos;style-scope uo-im-inbox&apos;)][not(contains(@class,&apos;spinner&apos;))]//ul[contains(@class,&apos;exInboxItemLeft &apos;)]//li[2]/div[not(contains(text(),&apos;Group&apos;))]/../../..)[</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="excursion_info_loading" elementType="Argument">
+              <stringProp name="Argument.name">excursion_info_loading</stringProp>
+              <stringProp name="Argument.value">//div[contains(@class,&apos;ex-spinnerDiv&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="inbox_excursion_id" elementType="Argument">
+              <stringProp name="Argument.name">inbox_excursion_id</stringProp>
+              <stringProp name="Argument.value">//uo-im-inbox[@id=&apos;inbox&apos;]/div[@class=&apos;inbox style-scope uo-im-inbox&apos;]/div[@class=&apos;inboxList style-scope uo-im-inbox&apos;]/div[contains(@class,&apos;style-scope uo-im-inbox selected&apos;)][not(contains(@class,&apos;spinner&apos;))]//ul[contains(@class,&apos;exInboxItemLeft &apos;)]//li[3]/div</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="indicator_chart_loading" elementType="Argument">
+              <stringProp name="Argument.name">indicator_chart_loading</stringProp>
+              <stringProp name="Argument.value">//div[contains(@class,&apos;indicators&apos;)]//div[contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="historical_excursions_loading" elementType="Argument">
+              <stringProp name="Argument.name">historical_excursions_loading</stringProp>
+              <stringProp name="Argument.value">//px-spinner[contains(@class,&apos;historical-excursions&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="current_filter" elementType="Argument">
+              <stringProp name="Argument.name">current_filter</stringProp>
+              <stringProp name="Argument.value">//div[contains(@class,&apos;currentFilter&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="allexcursions" elementType="Argument">
+              <stringProp name="Argument.name">allexcursions</stringProp>
+              <stringProp name="Argument.value">//ul[@class=&apos;list style-scope poa-drop-checklist&apos;][not(@hidden)]//li[contains(text(),&apos;All Excursions&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="inboxListSpinner" elementType="Argument">
+              <stringProp name="Argument.name">inboxListSpinner</stringProp>
+              <stringProp name="Argument.value">//uo-im-inbox[@id=&apos;inbox&apos;]//div[contains(@class,&apos;inboxList spinner&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="inboxList" elementType="Argument">
+              <stringProp name="Argument.name">inboxList</stringProp>
+              <stringProp name="Argument.value">//uo-im-inbox[@id=&apos;inbox&apos;]//div[@class=&apos;inboxList style-scope uo-im-inbox&apos;]/div</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="excursion_info_loding" elementType="Argument">
+              <stringProp name="Argument.name">excursion_info_loding</stringProp>
+              <stringProp name="Argument.value">//excursion-details[@id=&apos;details&apos;]//div[contains(@class,&apos;ex-spinnerDiv&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="filterPSV" elementType="Argument">
+              <stringProp name="Argument.name">filterPSV</stringProp>
+              <stringProp name="Argument.value">//ul[@class=&apos;list style-scope poa-drop-checklist&apos;][not(@hidden)]//li[contains(text(),&apos;PSV&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="filterMOL" elementType="Argument">
+              <stringProp name="Argument.name">filterMOL</stringProp>
+              <stringProp name="Argument.value">//ul[@class=&apos;list style-scope poa-drop-checklist&apos;][not(@hidden)]//li[contains(text(),&apos;MOL&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="filterUndetermined" elementType="Argument">
+              <stringProp name="Argument.name">filterUndetermined</stringProp>
+              <stringProp name="Argument.value">//ul[@class=&apos;list style-scope poa-drop-checklist&apos;][not(@hidden)]//li[contains(text(),&apos;Undetermined&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="filterOverridden" elementType="Argument">
+              <stringProp name="Argument.name">filterOverridden</stringProp>
+              <stringProp name="Argument.value">//ul[@class=&apos;list style-scope poa-drop-checklist&apos;][not(@hidden)]//li[contains(text(),&apos;Overridden&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="filterTesting" elementType="Argument">
+              <stringProp name="Argument.name">filterTesting</stringProp>
+              <stringProp name="Argument.value">//ul[@class=&apos;list style-scope poa-drop-checklist&apos;][not(@hidden)]//li[contains(text(),&apos;Testing&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="filterAutoNonGenuine" elementType="Argument">
+              <stringProp name="Argument.name">filterAutoNonGenuine</stringProp>
+              <stringProp name="Argument.value">//ul[@class=&apos;list style-scope poa-drop-checklist&apos;][not(@hidden)]//li[contains(text(),&apos;Auto Non-Genuine&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="filterManualNonGenuine" elementType="Argument">
+              <stringProp name="Argument.name">filterManualNonGenuine</stringProp>
+              <stringProp name="Argument.value">//ul[@class=&apos;list style-scope poa-drop-checklist&apos;][not(@hidden)]//li[contains(text(),&apos;Manual Non-Genuine&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="filterNonReportable" elementType="Argument">
+              <stringProp name="Argument.name">filterNonReportable</stringProp>
+              <stringProp name="Argument.value">//ul[@class=&apos;list style-scope poa-drop-checklist&apos;][not(@hidden)]//li[contains(text(),&apos;Non-Reportable&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="filterSuppressed" elementType="Argument">
+              <stringProp name="Argument.name">filterSuppressed</stringProp>
+              <stringProp name="Argument.value">//ul[@class=&apos;list style-scope poa-drop-checklist&apos;][not(@hidden)]//li[contains(text(),&apos;Suppressed&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="filterCaseCreated" elementType="Argument">
+              <stringProp name="Argument.name">filterCaseCreated</stringProp>
+              <stringProp name="Argument.value">//ul[@class=&apos;list style-scope poa-drop-checklist&apos;][not(@hidden)]//li[contains(text(),&apos;Case Created&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="system_trends" elementType="Argument">
+              <stringProp name="Argument.name">system_trends</stringProp>
+              <stringProp name="Argument.value">//system-trends[@id=&apos;sTrendsL1&apos;]//px-card[@id=&apos;trends&apos;]//div[@class=&apos;chartLoading style-scope system-trends&apos;][contains(.,&apos;Loading data&apos;)][@hidden]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="my_watchlist" elementType="Argument">
+              <stringProp name="Argument.name">my_watchlist</stringProp>
+              <stringProp name="Argument.value">//my-watchlist[@id=&apos;watchListL1&apos;]//div[contains(@class,&apos;loading&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="reports_module_link" elementType="Argument">
+              <stringProp name="Argument.name">reports_module_link</stringProp>
+              <stringProp name="Argument.value">//a//div[contains(text(),&apos;Reports&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="reports_systems" elementType="Argument">
+              <stringProp name="Argument.name">reports_systems</stringProp>
+              <stringProp name="Argument.value">//exreport-bysystems[@chart-id=&apos;excursionbysystems&apos;]//div[contains(@class,&apos;exreport-bysystems&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="reports_past12months" elementType="Argument">
+              <stringProp name="Argument.name">reports_past12months</stringProp>
+              <stringProp name="Argument.value">//exreport-past12months[@chart-id=&apos;excursionpast&apos;]//div[contains(@class,&apos;exreport-past12months&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="reports_device" elementType="Argument">
+              <stringProp name="Argument.name">reports_device</stringProp>
+              <stringProp name="Argument.value">//exreport-devicetypes[@chart-id=&apos;excursiondevicetypes&apos;]//div[contains(@class,&apos;exreport-devicetypes&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="reports_cases" elementType="Argument">
+              <stringProp name="Argument.name">reports_cases</stringProp>
+              <stringProp name="Argument.value">//exreport-casestatus[@chart-id=&apos;excursioncasestatus&apos;]//div[contains(@class,&apos;exreport-casestatus&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="reports_badactors" elementType="Argument">
+              <stringProp name="Argument.name">reports_badactors</stringProp>
+              <stringProp name="Argument.value">//exreport-badactors[@chart-id=&apos;excursionbadactors-chart&apos;]//div[contains(@class,&apos;exreport-badactors&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="reports_causes" elementType="Argument">
+              <stringProp name="Argument.name">reports_causes</stringProp>
+              <stringProp name="Argument.value">//exreport-causes[@chart-id=&apos;excursioncausetypes&apos;]//div[contains(@class,&apos;exreport-causes&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="reportsExcursionCategory" elementType="Argument">
+              <stringProp name="Argument.name">reportsExcursionCategory</stringProp>
+              <stringProp name="Argument.value">//select[contains(@class,&apos;options operation&apos;)][@id=&apos;ExcursionCategory&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="reportsEquals" elementType="Argument">
+              <stringProp name="Argument.name">reportsEquals</stringProp>
+              <stringProp name="Argument.value">//select[contains(@class,&apos;options operation&apos;)][@id=&apos;ExcursionCategory&apos;]//option[@value=&apos;EQUALS&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="reportsExcurCategory" elementType="Argument">
+              <stringProp name="Argument.name">reportsExcurCategory</stringProp>
+              <stringProp name="Argument.value">//select[@class=&apos;style-scope excursion-filters&apos;][@id=&apos;ExcursionCategory&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="reportsReportable" elementType="Argument">
+              <stringProp name="Argument.name">reportsReportable</stringProp>
+              <stringProp name="Argument.value">//select[@class=&apos;style-scope excursion-filters&apos;][@id=&apos;ExcursionCategory&apos;]//option[@value=&apos;Reportable&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="applyFilterBtn" elementType="Argument">
+              <stringProp name="Argument.name">applyFilterBtn</stringProp>
+              <stringProp name="Argument.value">//button[@id=&apos;apply-filter&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="anomalies_module_link" elementType="Argument">
+              <stringProp name="Argument.name">anomalies_module_link</stringProp>
+              <stringProp name="Argument.value">//a//div[contains(text(),&apos;Anomalies&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="anomalies_inbox_spinner" elementType="Argument">
+              <stringProp name="Argument.name">anomalies_inbox_spinner</stringProp>
+              <stringProp name="Argument.value">//uo-im-inbox[@id=&apos;anomalies-inbox&apos;]//div[contains(@class,&apos;spinner&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="anomalies_id" elementType="Argument">
+              <stringProp name="Argument.name">anomalies_id</stringProp>
+              <stringProp name="Argument.value">//uo-im-inbox[@id=&apos;anomalies-inbox&apos;]//div[@class=&apos;inboxList style-scope uo-im-inbox&apos;]/div[2]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="dpFlter" elementType="Argument">
+              <stringProp name="Argument.name">dpFlter</stringProp>
+              <stringProp name="Argument.value">//li[@id=&apos;FILTER&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="anomalies_inbox" elementType="Argument">
+              <stringProp name="Argument.name">anomalies_inbox</stringProp>
+              <stringProp name="Argument.value">//uo-im-inbox[@id=&apos;anomalies-inbox&apos;]/div[@class=&apos;inbox style-scope uo-im-inbox&apos;]/div[@class=&apos;inboxList style-scope uo-im-inbox&apos;]/div[contains(@class,&apos;style-scope uo-im-inbox&apos;)][not(contains(@class,&apos;spinner&apos;))]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="anomalies_inbox_id" elementType="Argument">
+              <stringProp name="Argument.name">anomalies_inbox_id</stringProp>
+              <stringProp name="Argument.value">(//uo-im-inbox[@id=&apos;anomalies-inbox&apos;]/div[@class=&apos;inbox style-scope uo-im-inbox&apos;]/div[@class=&apos;inboxList style-scope uo-im-inbox&apos;]/div[contains(@class,&apos;style-scope uo-im-inbox&apos;)][not(contains(@class,&apos;spinner&apos;))])[</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="viewDetailsBtn" elementType="Argument">
+              <stringProp name="Argument.name">viewDetailsBtn</stringProp>
+              <stringProp name="Argument.value">//generic-anomaly[@id=&apos;generic-anomaly&apos;]//button[text()=&apos;View Details&apos;]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="anomalyFullView" elementType="Argument">
+              <stringProp name="Argument.name">anomalyFullView</stringProp>
+              <stringProp name="Argument.value">//div[@class=&apos;full-body-container style-scope anomaly-fullview&apos;]/div[contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="anomalyTimeSeries" elementType="Argument">
+              <stringProp name="Argument.name">anomalyTimeSeries</stringProp>
+              <stringProp name="Argument.value">//div[contains(@class,&apos;timeSeries&apos;)]//div[contains(@class,&apos;ex-loading&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="anomalyChart" elementType="Argument">
+              <stringProp name="Argument.name">anomalyChart</stringProp>
+              <stringProp name="Argument.value">//div[contains(@class,&apos;historical-chartarea&apos;)]//div[contains(@class,&apos;historical-loader&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="anomalyHistoricalTab" elementType="Argument">
+              <stringProp name="Argument.name">anomalyHistoricalTab</stringProp>
+              <stringProp name="Argument.value">//div[contains(@class,&apos;historicalTable&apos;)]//div[contains(@class,&apos;historical-loader&apos;)][contains(@style,&apos;none&apos;)]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="timeout" elementType="Argument">
+              <stringProp name="Argument.name">timeout</stringProp>
+              <stringProp name="Argument.value">100</stringProp>
+              <stringProp name="Argument.desc">timeout 100 seconds</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="isExcursionGroup" elementType="Argument">
+              <stringProp name="Argument.name">isExcursionGroup</stringProp>
+              <stringProp name="Argument.value">//uo-im-inbox[@id=&apos;inbox&apos;]/div[@class=&apos;inbox style-scope uo-im-inbox&apos;]/div[@class=&apos;inboxList style-scope uo-im-inbox&apos;]/div[contains(@class,&apos;style-scope uo-im-inbox selected&apos;)][not(contains(@class,&apos;spinner&apos;))]//ul[contains(@class,&apos;exInboxItemLeft &apos;)]//li[2]/div</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="excursionGroupPageId" elementType="Argument">
+              <stringProp name="Argument.name">excursionGroupPageId</stringProp>
+              <stringProp name="Argument.value">//excursion-group-details[@id=&apos;details&apos;]//div[contains(@class,&apos;exDate&apos;)][2]</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+          <stringProp name="WebDriverConfig.proxy_type">SYSTEM</stringProp>
+          <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+          <stringProp name="WebDriverConfig.http_host"></stringProp>
+          <intProp name="WebDriverConfig.http_port">8080</intProp>
+          <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+          <stringProp name="WebDriverConfig.https_host"></stringProp>
+          <intProp name="WebDriverConfig.https_port">8080</intProp>
+          <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+          <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+          <stringProp name="WebDriverConfig.socks_host"></stringProp>
+          <intProp name="WebDriverConfig.socks_port">8080</intProp>
+          <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+          <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+          <stringProp name="ChromeDriverConfig.chromedriver_path">C:\Users\502614037\chromedriver_win32\chromedriver.exe</stringProp>
+          <boolProp name="WebDriverConfig.maximize_browser">false</boolProp>
+          <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+          <boolProp name="ChromeDriverConfig.android_enabled">false</boolProp>
+        </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Launch" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium, org.openqa.selenium.support.ui)&#xd;
+&#xd;
+WDS.browser.manage().window().setPosition(new pkg.Point(0, 0))&#xd;
+WDS.browser.manage().window().setSize(new pkg.Dimension(1366, 1080));&#xd;
+&#xd;
+WDS.sampleResult.sampleStart()&#xd;
+    WDS.browser.get(&apos;${poa_url}&apos;)&#xd;
+    WDS.log.info(&apos;POA launched successfully and displayed login page&apos;) &#xd;
+WDS.sampleResult.sampleEnd()</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Login" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)&#xd;
+var timeunit = java.util.concurrent.TimeUnit&#xd;
+var NSE = org.openqa.selenium.NoSuchElementException.class&#xd;
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions&#xd;
+var FWait = org.openqa.selenium.support.ui.FluentWait&#xd;
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);&#xd;
+WDS.browser.findElement(pkg.By.cssSelector(&quot;${username_tb_id}&quot;)).sendKeys(&apos;${username}&apos;)&#xd;
+WDS.browser.findElement(pkg.By.cssSelector(&quot;${password_tb_id}&quot;)).sendKeys(&apos;${password}&apos;)&#xd;
+&#xd;
+WDS.sampleResult.sampleStart()&#xd;
+    WDS.browser.findElement(pkg.By.xpath(&quot;${signin_btn_xpath}&quot;)).click()&#xd;
+        try &#xd;
+        { &#xd;
+        	wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${dashboard_title_xpath}&quot;)))&#xd;
+        	WDS.log.info(&apos;POA Successfully logged in and Dashboard view page displayed&apos;) &#xd;
+        } &#xd;
+        catch (err) &#xd;
+        { &#xd;
+        		WDS.log.info(&apos;POA not logged in and Dashboard view page is not displayed&apos;)            &#xd;
+        		WDS.sampleResult.successful = false&#xd;
+                WDS.log.error(err.message)&#xd;
+        } 	&#xd;
+WDS.sampleResult.sampleEnd()</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Excursion Spine Severity 1" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        WDS.log.info(&apos;Waiting for Excursions spine loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_excursions_spine}&quot;)))
+        var sev1count =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev1_excursion_count}&quot;)).getText().trim() 
+        if (!sev1count.equals(&quot;0&quot;) &amp;&amp; !sev1count.isEmpty() ) {
+            WDS.log.info(&apos;Clicking Excursion Spine Severity 1&apos;) 
+            WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev1_excursion_count}&quot;)).click()
+           
+            WDS.log.info(&apos;Getting the excursion id from the Excursion Spine Severity 1&apos;) 
+            var sev1Id =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).getAttribute(&quot;href&quot;).trim()  
+    		var excursionSev1ID = sev1Id.substring(sev1Id.lastIndexOf(&apos;/&apos;) + 1)
+            if(excursionSev1ID.contains(&quot;?&quot;)){
+                excursionSev1ID = excursionSev1ID.replace(excursionSev1ID.substring(excursionSev1ID.indexOf(&quot;?&quot;) ,excursionSev1ID.length()), &quot;&quot;)
+            }
+            WDS.log.info(&apos;Selecting excursion #&apos;+excursionSev1ID +&apos; from the Excursion Spine Severity 1&apos;) 
+            WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).click()
+            WDS.sampleResult.sampleStart()
+            WDS.log.info(&apos;Waiting and checking the excersion page info title&apos;) 
+            if(!excursionSev1ID.isEmpty()){ 
+                WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${isExcursionGroup}&quot;)))  
+                var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+                if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+                { 
+                    wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page}&quot;),&quot;#&quot;+excursionSev1ID))
+                    WDS.log.info(excursionSev1ID +&apos; spine excursion# severity1 and Excursion module info page excursion# are matching&apos;) 
+                }else{
+                    wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionSev1ID))
+                    WDS.log.info(excursionSev1ID +&apos; spine excursion# severity1 and Excursion module group info page excursion# are matching&apos;) 
+                }            
+            }else{
+                WDS.log.info(excursionSev1ID +&apos; spine excursion# severity1 and Excursion module info page excursion# are NOT matching&apos;)
+                WDS.sampleResult.successful = false
+            }
+        }else{
+              WDS.sampleResult.sampleStart() 
+              WDS.log.info(&apos;WARNING!!! EXCURSIONS failed to load or no EXCURSIONS for severity 1&apos;)
+        }
+    } 
+    catch (err) 
+    { 
+		WDS.log.info( &apos;Checking the Excursion Spine Severity 1 is having issue&apos;) 
+		WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+     WDS.sampleResult.sampleEnd()
+    </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Excursion Spine Severity 2" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        WDS.log.info(&apos;Clicking the Dashboard module&apos;)      
+        WDS.browser.findElement(pkg.By.xpath(&quot;${dashboard_module_link}&quot;)).click()
+        WDS.log.info(&apos;Waiting for Excursions spine loading to complete&apos;) 
+		wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_excursions_spine}&quot;)))
+        java.lang.Thread.sleep(1000) 
+ 	  var sev1count =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev2_excursion_count}&quot;)).getText().trim() 
+      if (!sev1count.equals(&quot;0&quot;) &amp;&amp; !sev1count.isEmpty() ) {	
+        WDS.log.info(&apos;Clicking Excursion Spine Severity 2&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev2_excursion_count}&quot;)).click()
+       
+		WDS.log.info(&apos;Getting the excursion id from the Excursion Spine Severity 2&apos;) 
+		var sev2Id =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).getAttribute(&quot;href&quot;).trim()   
+        var excursionSev2ID = sev2Id.substring(sev2Id.lastIndexOf(&apos;/&apos;) + 1)
+        if(excursionSev2ID.contains(&quot;?&quot;)){
+            excursionSev2ID = excursionSev2ID.replace(excursionSev2ID.substring(excursionSev2ID.indexOf(&quot;?&quot;) ,excursionSev2ID.length()), &quot;&quot;)
+        }
+        WDS.log.info(&apos;Selecting excursion id &apos;+excursionSev2ID +&apos; from the Excursion Spine Severity 2&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).click()
+         WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting and checking the excersion info page id&apos;) 
+        if(!excursionSev2ID.isEmpty()){
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${isExcursionGroup}&quot;)))    
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            { 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page}&quot;),&quot;#&quot;+excursionSev2ID))
+                WDS.log.info(excursionSev2ID +&apos; spine excursion# severity2 and Excursion module info page excursion# are matching&apos;) 
+            }else{
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionSev2ID))
+                WDS.log.info(excursionSev2ID +&apos; spine excursion# severity2 and Excursion module group info page excursion# are matching&apos;) 
+            }     
+        }else{
+            WDS.log.info(excursionSev2ID +&apos; spine excursion# severity2 and Excursion module info page excursion# are NOT matching&apos;)
+            WDS.sampleResult.successful = false
+        }
+       }else{
+           WDS.sampleResult.sampleStart() 
+           WDS.log.info(&apos;WARNING!!! EXCURSIONS failed to load or no EXCURSIONS for severity 2&apos;)
+        }  
+     } 
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Checking the Excursion Spine Severity 2 is having issue&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+     WDS.sampleResult.sampleEnd()
+    </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Excursion Spine Severity 3" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        WDS.log.info(&apos;Clicking the Dashboard module&apos;)      
+        WDS.browser.findElement(pkg.By.xpath(&quot;${dashboard_module_link}&quot;)).click()
+        WDS.log.info(&apos;Waiting for Excursions spine loading to complete&apos;) 
+		wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_excursions_spine}&quot;)))
+        java.lang.Thread.sleep(1000) 
+        var sev1count =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev3_excursion_count}&quot;)).getText().trim() 
+      if (!sev1count.equals(&quot;0&quot;) &amp;&amp; !sev1count.isEmpty() ) {	
+ 		WDS.log.info(&apos;Clicking Excursion Spine Severity 3&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev2_excursion_count}&quot;)).click()
+        
+		WDS.log.info(&apos;Getting the excursion id from the Excursion Spine Severity 3&apos;) 
+		var Sev3ID =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).getAttribute(&quot;href&quot;).trim()   
+		var excursionSev3ID = Sev3ID.substring(Sev3ID.lastIndexOf(&apos;/&apos;) + 1)
+        if(excursionSev3ID.contains(&quot;?&quot;)){
+            excursionSev3ID = excursionSev3ID.replace(excursionSev3ID.substring(excursionSev3ID.indexOf(&quot;?&quot;) ,excursionSev3ID.length()), &quot;&quot;)
+        }
+        WDS.log.info(&apos;Selecting excursion id &apos;+excursionSev3ID +&apos; from the Excursion Spine Severity 3&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting and checking the excersion info page id&apos;)
+		if(!excursionSev3ID.isEmpty()){
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${isExcursionGroup}&quot;)))     
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            { 
+               wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page}&quot;),&quot;#&quot;+excursionSev3ID))
+               WDS.log.info(excursionSev3ID +&apos; spine excursion# severity3 and Excursion module info page excursion# are matching&apos;) 
+            }else{
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionSev3ID))
+                WDS.log.info(excursionSev3ID +&apos; spine excursion# severity3 and Excursion module group info page excursion# are matching&apos;) 
+            }      
+        }else{
+            WDS.log.info(excursionSev3ID +&apos; spine excursion# severity3 and Excursion module info page excursion# are NOT matching&apos;)
+            WDS.sampleResult.successful = false
+        } 
+       }else{
+              WDS.sampleResult.sampleStart() 
+              WDS.log.info(&apos;WARNING!!! EXCURSIONS failed to load or no EXCURSIONS for severity 3&apos;)
+        }
+    }    
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Checking the Excursion Spine Severity 3 is having issue&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+     WDS.sampleResult.sampleEnd()
+ </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Anomalies Spine Severity 3" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+ try 
+    { 
+	    WDS.log.info(&apos;Clicking the Dashboard module&apos;)      
+        WDS.browser.findElement(pkg.By.xpath(&quot;${dashboard_module_link}&quot;)).click()
+         WDS.log.info(&apos;Waiting for anomalies spine loading to complete&apos;) 
+		wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_anomalies_spine}&quot;)))
+        java.lang.Thread.sleep(1000) 
+     var sev1count =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev3_anomalies_count}&quot;)).getText().trim() 
+      if (!sev1count.equals(&quot;0&quot;) &amp;&amp; !sev1count.isEmpty() ) {	     
+        
+		WDS.log.info(&apos;Clicking anomalies Spine Severity 3&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev3_anomalies_count}&quot;)).click()
+        java.lang.Thread.sleep(1000) 
+        WDS.log.info(&apos;Getting the anomalies id from the anomalies Spine Severity 3&apos;) 
+        java.lang.Thread.sleep(2000) 
+		var anomSev3ID =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).getAttribute(&quot;href&quot;).trim()   
+		var anomalieSev3ID = anomSev3ID.substring(anomSev3ID.lastIndexOf(&apos;/&apos;) + 1)
+        if(anomalieSev3ID.contains(&quot;?&quot;)){
+            anomalieSev3ID = anomalieSev3ID.replace(anomalieSev3ID.substring(anomalieSev3ID.indexOf(&quot;?&quot;) ,anomalieSev3ID.length()), &quot;&quot;)
+        }
+		
+        
+		WDS.log.info(&apos;Selecting Anomalies id &apos;+anomalieSev3ID +&apos; from the Anomalies Spine Severity 3&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting and checking the anomalies info page id&apos;)
+		if(!anomalieSev3ID.isEmpty()){
+            wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page}&quot;),&quot;#&quot;+anomalieSev3ID))
+            WDS.log.info(anomalieSev3ID +&apos; spine Anomalies# severity3 and Anomalies module info page anomalies# are matching&apos;) 
+        }else{
+            WDS.log.info(anomalieSev3ID +&apos; spine Anomalies# severity3 and Anomalies module info page anomalies# are NOT matching&apos;)
+            WDS.sampleResult.successful = false
+        }
+        }else{
+              WDS.sampleResult.sampleStart() 
+              WDS.log.info(&apos;WARNING!!! anomalies failed to load or no anomalies for severity 3&apos;)
+        }
+    }
+    catch (err) 
+    { 
+    		WDS.log.info( &apos;anomaliesis not displayed in Anomalies Spine on page&apos;) 
+    		WDS.sampleResult.successful = false
+            WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+ </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Cases Spine Severity 1" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+    try 
+    { 
+	    WDS.log.info(&apos;Clicking the Dashboard module&apos;)      
+        WDS.browser.findElement(pkg.By.xpath(&quot;${dashboard_module_link}&quot;)).click()
+         WDS.log.info(&apos;Waiting for cases spine loading to complete&apos;) 
+		 wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_cases_spine}&quot;)))
+        java.lang.Thread.sleep(1000) 
+ var sev1count =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev1_cases_count}&quot;)).getText().trim() 
+      if (!sev1count.equals(&quot;0&quot;) &amp;&amp; !sev1count.isEmpty() ) {	     
+		WDS.log.info(&apos;Clicking cases Spine Severity 1&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev1_cases_count}&quot;)).click()
+        java.lang.Thread.sleep(1000) 
+        WDS.log.info(&apos;Getting the cases id from the cases Spine Severity 1&apos;) 
+		var caseSev1ID =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).getAttribute(&quot;href&quot;).trim()   
+		var casesSev1ID = caseSev1ID.substring(caseSev1ID.lastIndexOf(&apos;/&apos;) + 1)
+        if(casesSev1ID.contains(&quot;?&quot;)){
+            casesSev1ID = casesSev1ID.replace(casesSev1ID.substring(casesSev1ID.indexOf(&quot;?&quot;) ,casesSev1ID.length()), &quot;&quot;)
+        }
+		
+        
+		WDS.log.info(&apos;Selecting cases id &apos;+casesSev1ID +&apos; from the cases Spine Severity 1&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting and checking the cases info page id&apos;)
+		if(!casesSev1ID.isEmpty()){
+            wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page2}&apos;)]&quot;),&quot;Case ID #&quot;+casesSev1ID))
+            WDS.log.info(casesSev1ID +&apos; spine cases# severity1 and cases module info page cases# are matching&apos;) 
+        }else{
+            WDS.log.info(casesSev1ID +&apos; spine cases# severity1 and cases module info page cases# are NOT matching&apos;)
+            WDS.sampleResult.successful = false
+        }
+       }else{
+              WDS.sampleResult.sampleStart() 
+              WDS.log.info(&apos;WARNING!!! cases failed to load or no anomalies for cases 1&apos;)
+        } 
+    } 
+    catch (err) 
+    { 
+    		WDS.log.info( &apos;Selected spine severity 1 is not displayed in Cases page&apos;) 
+    		WDS.sampleResult.successful = false
+            WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Cases Spine Severity 2" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+    try 
+    { 
+	    WDS.log.info(&apos;Clicking the Dashboard module&apos;)      
+        WDS.browser.findElement(pkg.By.xpath(&quot;${dashboard_module_link}&quot;)).click()
+         WDS.log.info(&apos;Waiting for cases spine loading to complete&apos;) 
+		 wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_cases_spine}&quot;)))
+        java.lang.Thread.sleep(1000) 
+   var sev1count =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev2_cases_count}&quot;)).getText().trim() 
+      if (!sev1count.equals(&quot;0&quot;) &amp;&amp; !sev1count.isEmpty() ) {	     
+		WDS.log.info(&apos;Clicking cases Spine Severity 2&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev2_cases_count}&quot;)).click()
+        java.lang.Thread.sleep(1000) 
+        WDS.log.info(&apos;Getting the cases id from the cases Spine Severity 2&apos;) 
+		var caseSev2ID =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).getAttribute(&quot;href&quot;).trim()   
+		var casesSev2ID = caseSev2ID.substring(caseSev2ID.lastIndexOf(&apos;/&apos;) + 1)
+        if(casesSev2ID.contains(&quot;?&quot;)){
+            casesSev2ID = casesSev2ID.replace(casesSev2ID.substring(casesSev2ID.indexOf(&quot;?&quot;) ,casesSev2ID.length()), &quot;&quot;)
+        }
+		
+        
+		WDS.log.info(&apos;Selecting cases id &apos;+casesSev2ID +&apos; from the cases Spine Severity 2&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting and checking the cases info page id&apos;)
+		if(!casesSev2ID.isEmpty()){
+            wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page2}&quot;),&quot;Case ID #&quot;+casesSev2ID))
+            WDS.log.info(casesSev2ID +&apos; spine cases# severity2 and cases module info page cases# are matching&apos;) 
+        }else{
+            WDS.log.info(casesSev2ID +&apos; spine cases# severity2 and cases module info page cases# are NOT matching&apos;)
+            WDS.sampleResult.successful = false
+        }
+        }else{
+              WDS.sampleResult.sampleStart() 
+              WDS.log.info(&apos;WARNING!!! cases failed to load or no cases for severity 2&apos;)
+        } 
+    } 
+    catch (err) 
+    { 
+    		WDS.log.info( &apos;Selected spine severity 2 is not displayed in Cases page&apos;) 
+    		WDS.sampleResult.successful = false
+            WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Cases Spine Severity 3" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+    try 
+    { 
+	    WDS.log.info(&apos;Clicking the Dashboard module&apos;)      
+        WDS.browser.findElement(pkg.By.xpath(&quot;${dashboard_module_link}&quot;)).click()
+        WDS.log.info(&apos;Waiting for cases spine loading to complete&apos;) 
+		wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_cases_spine}&quot;)))
+        java.lang.Thread.sleep(1000) 
+    var sev1count =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev3_cases_count}&quot;)).getText().trim() 
+      if (!sev1count.equals(&quot;0&quot;) &amp;&amp; !sev1count.isEmpty()) {	     
+		WDS.log.info(&apos;Clicking cases Spine Severity 3&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${spine_sev3_cases_count}&quot;)).click()
+        java.lang.Thread.sleep(1000) 
+        WDS.log.info(&apos;Getting the cases id from the cases Spine Severity 3&apos;) 
+		var caseSev3ID =  WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).getAttribute(&quot;href&quot;).trim()   
+		var casesSev3ID = caseSev3ID.substring(caseSev3ID.lastIndexOf(&apos;/&apos;) + 1)
+        if(casesSev3ID.contains(&quot;?&quot;)){
+            casesSev3ID = casesSev3ID.replace(casesSev3ID.substring(casesSev3ID.indexOf(&quot;?&quot;) ,casesSev3ID.length()), &quot;&quot;)
+        }
+		
+       
+		WDS.log.info(&apos;Selecting cases id &apos;+casesSev3ID +&apos; from the cases Spine Severity 3&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${spine_id_link_xpath}&quot;)).click()
+         WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting and checking the cases info page id&apos;)
+		if(!casesSev3ID.isEmpty()){
+            wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page2}&quot;),&quot;Case ID #&quot;+casesSev3ID))
+            WDS.log.info(casesSev3ID +&apos; spine cases# severity3 and cases module info page cases# are matching&apos;) 
+        }else{
+            WDS.log.info(casesSev3ID +&apos; spine cases# severity3 and cases module info page cases# are NOT matching&apos;)
+            WDS.sampleResult.successful = false
+        }
+       }else{
+              WDS.sampleResult.sampleStart() 
+              WDS.log.info(&apos;WARNING!!! cases failed to load or no cases for severity 3&apos;)
+        } 
+    } 
+    catch (err) 
+    { 
+    		WDS.log.info( &apos;Selected spine severity 3 is not displayed in Cases page&apos;) 
+    		WDS.sampleResult.successful = false
+            WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Heat Map VRU1" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+    try 
+    { 
+	    WDS.log.info(&apos;Clicking the Dashboard module&apos;)      
+        WDS.browser.findElement(pkg.By.xpath(&quot;${dashboard_module_link}&quot;)).click()
+        WDS.log.info(&apos;Waiting for heat map loading to complete&apos;) 
+		wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${heatmap_loading}&quot;)))
+        java.lang.Thread.sleep(1000) 
+		WDS.log.info(&apos;Clicking on Hydrocarban Gas VRU1&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${heatmap_vru1}&quot;)).click()
+        java.lang.Thread.sleep(1000) 
+    WDS.log.info(&apos;Getting the total VRU1 in the hydrocarban Gas heatmap &apos;)        
+    var getInboxSize = WDS.browser.findElements(pkg.By.xpath(&quot;${heatmap_vru1_id}&quot;)).size()
+    WDS.log.info(&apos;Number of group VRU1 in the hydrocarban Gas heatmap : &apos; +getInboxSize);
+        if (getInboxSize!=0) 
+        {        
+            
+            WDS.log.info(&apos;Getting the VRU1 id from the dashboard heat map Hydrocarban Gas VRU1&apos;) 
+    		var getExcursionLink =  WDS.browser.findElement(pkg.By.xpath(&quot;${heatmap_vru1_id}&quot;)).getAttribute(&quot;href&quot;).trim()   
+    		var getExcursionId = getExcursionLink.substring(getExcursionLink.lastIndexOf(&apos;/&apos;) + 1)
+            if(getExcursionId.contains(&quot;?&quot;)){
+                getExcursionId = getExcursionId.replace(getExcursionId.substring(getExcursionId.indexOf(&quot;?&quot;) ,getExcursionId.length()), &quot;&quot;)
+            }
+    		
+            WDS.sampleResult.sampleStart()
+    		WDS.log.info(&apos;Selecting VRU1 id &apos;+getExcursionId +&apos; from the dashboard heat map Hydrocarban Gas VRU1&apos;) 
+            WDS.browser.findElement(pkg.By.xpath(&quot;${heatmap_vru1_id}&quot;)).click()
+            WDS.log.info(&apos;Waiting and checking the Excursion info page id&apos;)
+    		if(!getExcursionId.isEmpty()){
+                WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${isExcursionGroup}&quot;)))    
+                var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+                if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+                { 
+                   wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page}&quot;),&quot;#&quot;+getExcursionId))
+                   WDS.log.info(getExcursionId +&apos; dashboard heat map Hydrocarban Gas VRU1#  and  Excursion info page excursion id are matching&apos;) 
+                }else{
+                    wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),&quot;#&quot;+getExcursionId))
+                    WDS.log.info(getExcursionId +&apos; dashboard heat map Hydrocarban Gas VRU1#  and  Excursion info page excursion id are matching&apos;) 
+                }
+        
+                
+            }else{
+                WDS.log.info(getExcursionId +&apos; dashboard heat map Hydrocarban Gas VRU1#  and  Excursion info page excursion id are NOT matching&apos;)
+                WDS.sampleResult.successful = false
+            } 
+        }else{
+             WDS.sampleResult.sampleStart()
+             WDS.log.info(&apos;WARNING!!! No data available in the dashboard heat map Hydrocarban Gas VRU1&apos;)  
+        }
+    } 
+    catch (err) 
+    { 
+    		WDS.log.info( &apos;Selected heat map Hydrocarban Gas VRU1 and it is not displayed in excursion page&apos;) 
+    		WDS.sampleResult.successful = false
+            WDS.log.error(err.message)
+    } 	
+    WDS.sampleResult.sampleEnd()
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Heat Map VRU2" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+    try 
+    { 
+	    WDS.log.info(&apos;Clicking the Dashboard module&apos;)      
+        WDS.browser.findElement(pkg.By.xpath(&quot;${dashboard_module_link}&quot;)).click()
+        WDS.log.info(&apos;Waiting for heat map loading to complete&apos;) 
+		wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${heatmap_loading}&quot;)))
+        java.lang.Thread.sleep(1000) 
+		WDS.log.info(&apos;Clicking on Hydrocarban Gas VRU2&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${heatmap_vru2}&quot;)).click()
+        java.lang.Thread.sleep(1000) 
+        WDS.log.info(&apos;Getting the total VRU2 in the hydrocarban Gas heatmap &apos;)        
+        var getInboxSize = WDS.browser.findElements(pkg.By.xpath(&quot;${heatmap_vru2_id}&quot;)).size()
+        WDS.log.info(&apos;Number of group VRU2 in the hydrocarban Gas heatmap : &apos; +getInboxSize);
+        if (getInboxSize!=0) 
+        {      
+            WDS.log.info(&apos;Getting the VRU2 id from the dashboard heat map Hydrocarban Gas VRU2&apos;) 
+    		var getExcursionLink =  WDS.browser.findElement(pkg.By.xpath(&quot;${heatmap_vru2_id}&quot;)).getAttribute(&quot;href&quot;).trim()   
+    		var getExcursionId = getExcursionLink.substring(getExcursionLink.lastIndexOf(&apos;/&apos;) + 1)
+            if(getExcursionId.contains(&quot;?&quot;)){
+                getExcursionId = getExcursionId.replace(getExcursionId.substring(getExcursionId.indexOf(&quot;?&quot;) ,getExcursionId.length()), &quot;&quot;)
+            }
+    		
+            WDS.sampleResult.sampleStart()
+    		WDS.log.info(&apos;Selecting VRU2 id &apos;+getExcursionId +&apos; from the dashboard heat map Hydrocarban Gas VRU2&apos;) 
+            WDS.browser.findElement(pkg.By.xpath(&quot;${heatmap_vru2_id}&quot;)).click()
+            WDS.log.info(&apos;Waiting and checking the Excursion info page id&apos;)
+    		if(!getExcursionId.isEmpty()){
+                WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)  
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${isExcursionGroup}&quot;)))   
+                var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+                if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+                { 
+                    wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page}&quot;),&quot;#&quot;+getExcursionId))
+                    WDS.log.info(getExcursionId +&apos; dashboard heat map Hydrocarban Gas VRU2#  and  Excursion info page excursion id are matching&apos;) 
+                }else{
+                    wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),&quot;#&quot;+getExcursionId))
+                    WDS.log.info(getExcursionId +&apos; dashboard heat map Hydrocarban Gas VRU2#  and  Excursion info page excursion id are matching&apos;) 
+                }
+               
+            }else{
+                WDS.log.info(getExcursionId +&apos; dashboard heat map Hydrocarban Gas VRU2#  and  Excursion info page excursion id are NOT matching&apos;)
+                WDS.sampleResult.successful = false
+            }
+        }else{
+            WDS.sampleResult.sampleStart()
+            WDS.log.info(&apos;WARNING!!! No data available in the dashboard heat map Hydrocarban Gas VRU2&apos;)  
+        }
+    } 
+    catch (err) 
+    { 
+    		WDS.log.info( &apos;Selected heat map Hydrocarban Gas VRU2 and it is not displayed in excursion page&apos;) 
+    		WDS.sampleResult.successful = false
+            WDS.log.error(err.message)
+    } 	
+    WDS.sampleResult.sampleEnd()
+	WDS.log.info(&apos;Clicking the Dashboard module&apos;)      
+    WDS.browser.findElement(pkg.By.xpath(&quot;${dashboard_module_link}&quot;)).click()
+    WDS.log.info(&apos;Waiting for cases spine loading to complete&apos;) 
+	wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${dashboard_title_xpath}&quot;)))
+   </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select Excursion Module" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+    try 
+    { 
+        WDS.log.info(&apos;Clicking the Excursion module&apos;)      
+        WDS.browser.findElement(pkg.By.xpath(&quot;${excursion_module_link}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+//        WDS.log.info(&apos;Waiting for excursion info page to be loaded&apos;)      
+//        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${name_info_page}&quot;)))
+//        WDS.log.info(&apos;Selected Excursion module from dashboard page&apos;) 
+        WDS.log.info(&apos;Waiting for excursion inbox loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxListSpinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check excursion is listed into inbox&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxList}&quot;)))
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${inboxList}&quot;)).getText().trim()  
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)
+        if (!inboxData.equals(&quot;No data available&quot;)) 
+          {      
+            WDS.log.info(&apos;Waiting for excursion inbox excursion id loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)))
+            WDS.log.info(&apos;Getting the selected excursion id from the inbox&apos;)   
+            var excursionInboxId = WDS.browser.findElement( pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id inbox &apos;+ excursionInboxId)
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)   
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            { 
+                WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loding}&quot;)))
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page1}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }else{
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion group info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }
+             
+        } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the All Excursion inbox&apos;)  
+        }     
+    
+    } 
+    catch (err) 
+    { 
+    	WDS.log.info(&apos;Not selected Excursion module from dashboard page&apos;) 
+    	WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+              </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select Inbox Excursion" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+ try 
+    { 
+        WDS.log.info(&apos;Getting the total excursions in the imbox&apos;)        
+        var getInboxSize = WDS.browser.findElements(pkg.By.xpath(&quot;${inbox_excursions}&quot;)).size()
+        WDS.log.info(&apos;Number of group excursions in the list : &apos; +getInboxSize);
+        if (getInboxSize!=0) 
+        {
+            var randomNumber = Math.floor(Math.random() * getInboxSize+1);
+            WDS.log.info(&apos;Number of  excursions in the list : &apos; +randomNumber);
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursions}&quot;)))   
+            WDS.log.info(&apos; Moving to ( &apos;+randomNumber+&apos; th ) excursion from the list &apos;)
+            WDS.browser.executeScript(&quot;arguments[0].scrollIntoView(true);&quot;,WDS.browser.findElement(pkg.By.xpath(&quot;${inbox_excursions_random}&quot;+randomNumber+&quot;]&quot;)))
+            WDS.log.info(&apos; Selecting ( &apos;+randomNumber+&apos; th ) excursion from the list &apos;)
+            WDS.browser.findElement(pkg.By.xpath(&quot;${inbox_excursions_random}&quot;+randomNumber+&quot;]&quot;)).click()
+            java.lang.Thread.sleep(2000) 
+            WDS.sampleResult.sampleStart()
+            WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loading}&quot;)))
+            var infoExcursionID = WDS.browser.findElement(pkg.By.xpath(&quot;${id_info_page1}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id  &apos;+ infoExcursionID)
+            WDS.log.info(&apos;Checking the selected excursion id is same in inbox and info page&apos;) 
+            wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;),infoExcursionID))
+            WDS.log.info(&apos;Checking the indicator chart loading to complete in excursion info page&apos;)            
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${indicator_chart_loading}&quot;)))
+            WDS.log.info(&apos;Checking the historical excursions is loading to complete in excursion info page&apos;)            
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${historical_excursions_loading}&quot;)))
+        }else{
+             WDS.sampleResult.sampleStart() 
+             WDS.log.info(&apos;WARNING!!! No excursion available in inbox&apos;)  
+        }
+    } 
+    catch (err) 
+    { 
+        WDS.log.info(&apos;Not selected Excursion module from dashboard page&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+              </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select All Excursion" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait 
+var wait = new FWait(WDS.browser).withTimeout(10, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${current_filter}&quot;))) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${current_filter}&quot;)).click()
+        java.lang.Thread.sleep(2000)  
+        WDS.log.info(&apos;Selecting All Excursion filter&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${allexcursions}&quot;)))
+        WDS.browser.findElement(pkg.By.xpath(&quot;${allexcursions}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for excursion inbox loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxListSpinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check excursion is listed into inbox&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxList}&quot;)))
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${inboxList}&quot;)).getText().trim()  
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)
+        if (!inboxData.equals(&quot;No data available&quot;)) 
+          {      
+            WDS.log.info(&apos;Waiting for excursion inbox excursion id loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)))
+            WDS.log.info(&apos;Getting the selected excursion id from the inbox&apos;)   
+            var excursionInboxId = WDS.browser.findElement( pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id inbox &apos;+ excursionInboxId)
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)   
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            { 
+                WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loding}&quot;)))
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page1}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }else{
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion group info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }
+             
+        } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the All Excursion inbox&apos;)  
+        }    
+    }
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Not selected AllExcursion filter in excursion module&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+        java.lang.Thread.sleep(2000)   
+                </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select PSV" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${current_filter}&quot;)))
+        WDS.log.info(&apos;clicking the excursion filter&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${current_filter}&quot;)).click() 
+        java.lang.Thread.sleep(2000) 
+        WDS.log.info(&apos;Selecting PSV filter&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${filterPSV}&quot;)))
+        WDS.browser.findElement(pkg.By.xpath(&quot;${filterPSV}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for excursion inbox loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxListSpinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check excursion is listed into inbox&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxList}&quot;)))    
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${inboxList}&quot;)).getText().trim() 
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)      
+ 
+          if (!inboxData.equals(&quot;No data available&quot;)) 
+          {
+            WDS.log.info(&apos;Waiting for excursion inbox excursion id loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)))
+            WDS.log.info(&apos;Getting the selected excursion id from the inbox&apos;)   
+            var excursionInboxId = WDS.browser.findElement( pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id inbox &apos;+ excursionInboxId)
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)   
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            { 
+                WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loding}&quot;)))
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page1}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected PSV filter in excursion module&apos;)
+            }else{
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion group info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            } 
+         } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the PSV inbox&apos;)  
+         }
+    } 
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Not selected PSV filter in excursion module&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+       java.lang.Thread.sleep(2000)          </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select MOL" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${current_filter}&quot;)))
+        WDS.log.info(&apos;clicking the excursion filter&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${current_filter}&quot;)).click() 
+        java.lang.Thread.sleep(2000) 
+        WDS.log.info(&apos;Selecting MOL filter&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${filterMOL}&quot;))) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${filterMOL}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for excursion inbox loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxListSpinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check excursion is listed into inbox&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxList}&quot;)))    
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${inboxList}&quot;)).getText().trim()  
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)      
+ 
+          if (!inboxData.equals(&quot;No data available&quot;)) 
+          {
+      
+            WDS.log.info(&apos;Waiting for excursion inbox excursion id loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)))
+            WDS.log.info(&apos;Getting the selected excursion id from the inbox&apos;)   
+            var excursionInboxId1 = WDS.browser.findElement( pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id inbox &apos;+ excursionInboxId1)
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)   
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            {
+                WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loding}&quot;)))
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId1 +&apos; with excursion info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page1}&quot;),excursionInboxId1))
+                WDS.log.info(&apos;Selected MLV filter in excursion module&apos;) 
+            }else{
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId1 +&apos; with excursion group info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionInboxId1))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }            
+        } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the MOL inbox&apos;)  
+        }
+    } 
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Not selected MLV filter in excursion module&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+        java.lang.Thread.sleep(2000)                       </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select Undetermined" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${current_filter}&quot;)))
+        WDS.log.info(&apos;clicking the excursion filter&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${current_filter}&quot;)).click()
+        java.lang.Thread.sleep(2000) 
+        WDS.log.info(&apos;Selecting undetermined filter&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${filterUndetermined}&quot;)))
+        WDS.browser.findElement(pkg.By.xpath(&quot;${filterUndetermined}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for excursion inbox loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxListSpinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check excursion is listed into inbox&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxList}&quot;)))    
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${inboxList}&quot;)).getText().trim()
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)      
+ 
+        if (!inboxData.equals(&quot;No data available&quot;)) 
+        {
+            WDS.log.info(&apos;Waiting for excursion inbox excursion id loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)))
+            WDS.log.info(&apos;Getting the selected excursion id from the inbox&apos;)   
+            var excursionInboxId = WDS.browser.findElement( pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id inbox &apos;+ excursionInboxId)
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)   
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            {          
+                WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loding}&quot;)))
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page1}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected undetermined filter in excursion module&apos;) 
+            }else{
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion group info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }        
+        } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the undetermined inbox&apos;)  
+        }
+    } 
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Not selected undetermined filter in excursion module&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+        java.lang.Thread.sleep(2000)         </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select Overridden" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${current_filter}&quot;))) 
+        WDS.log.info(&apos;clicking the excursion filter&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${current_filter}&quot;)).click()
+        java.lang.Thread.sleep(2000) 
+        WDS.log.info(&apos;Selecting Overridden filter&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${filterOverridden}&quot;)))
+		WDS.browser.findElement(pkg.By.xpath(&quot;${filterOverridden}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for excursion inbox loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxListSpinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check excursion is listed into inbox&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxList}&quot;)))    
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${inboxList}&quot;)).getText().trim()
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)      
+ 
+        if (!inboxData.equals(&quot;No data available&quot;)) 
+        {       
+            WDS.log.info(&apos;Waiting for excursion inbox excursion id loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)))
+            WDS.log.info(&apos;Getting the selected excursion id from the inbox&apos;)   
+            var excursionInboxId = WDS.browser.findElement( pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id inbox &apos;+ excursionInboxId)
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)   
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            {           
+                WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loding}&quot;)))
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page1}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected Overridden filter in excursion module&apos;)  
+            }else{
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion group info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }        
+        } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the Overridden inbox&apos;)  
+        }
+        
+    } 
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Not selected Overridden filter in excursion module&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+        java.lang.Thread.sleep(2000)         </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select Testing" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${current_filter}&quot;)))
+        WDS.log.info(&apos;clicking the excursion filter&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${current_filter}&quot;)).click()
+        java.lang.Thread.sleep(2000) 
+        WDS.log.info(&apos;Selecting Testing filter&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${filterTesting}&quot;)))
+		WDS.browser.findElement(pkg.By.xpath(&quot;${filterTesting}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for excursion inbox loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxListSpinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check excursion is listed into inbox&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxList}&quot;)))    
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${inboxList}&quot;)).getText().trim()
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)      
+ 
+        if (!inboxData.equals(&quot;No data available&quot;)) 
+        {
+            WDS.log.info(&apos;Waiting for excursion inbox excursion id loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)))
+            WDS.log.info(&apos;Getting the selected excursion id from the inbox&apos;)   
+            var excursionInboxId = WDS.browser.findElement( pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id inbox &apos;+ excursionInboxId)
+           
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)   
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            {           
+                WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loding}&quot;)))
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page1}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected Testing filter in excursion module&apos;) 
+            }else{
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion group info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }        
+        } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the Testing filter inbox&apos;)  
+        }
+    } 
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Not selected  Testing filter in excursion module&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+        java.lang.Thread.sleep(2000)         </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select Auto Non-Genuine" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${current_filter}&quot;))) 
+        WDS.log.info(&apos;clicking the excursion filter&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${current_filter}&quot;)).click()
+        java.lang.Thread.sleep(2000) 
+        WDS.log.info(&apos;Selecting Auto Non-Genuine filter&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${filterAutoNonGenuine}&quot;))) 
+		WDS.browser.findElement(pkg.By.xpath(&quot;${filterAutoNonGenuine}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for excursion inbox loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxListSpinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check excursion is listed into inbox&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxList}&quot;)))    
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${inboxList}&quot;)).getText().trim()
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)      
+ 
+        if (!inboxData.equals(&quot;No data available&quot;)) 
+        {
+            WDS.log.info(&apos;Waiting for excursion inbox excursion id loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)))
+            WDS.log.info(&apos;Getting the selected excursion id from the inbox&apos;)   
+            var excursionInboxId = WDS.browser.findElement( pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id inbox &apos;+ excursionInboxId)
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)   
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            {
+                WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loding}&quot;)))
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page1}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected Auto Non-Genuine filter in excursion module&apos;)
+            }else{
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion group info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }         
+         } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the Auto Non-Genuine inbox&apos;)  
+         } 
+    } 
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Not selected  Auto Non-Genuine filter in excursion module&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+        java.lang.Thread.sleep(2000)         </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select Manual Non-Genuine" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${current_filter}&quot;)))
+        WDS.log.info(&apos;clicking the excursion filter&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${current_filter}&quot;)).click() 
+        java.lang.Thread.sleep(2000) 
+        WDS.log.info(&apos;Selecting Manual Non-Genuine filter&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${filterManualNonGenuine}&quot;)))
+		WDS.browser.findElement(pkg.By.xpath(&quot;${filterManualNonGenuine}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for excursion inbox loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxListSpinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check excursion is listed into inbox&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxList}&quot;)))    
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${inboxList}&quot;)).getText().trim()
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)      
+ 
+        if (!inboxData.equals(&quot;No data available&quot;)) 
+        {
+            WDS.log.info(&apos;Waiting for excursion inbox excursion id loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)))
+            WDS.log.info(&apos;Getting the selected excursion id from the inbox&apos;)   
+            var excursionInboxId = WDS.browser.findElement( pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id inbox &apos;+ excursionInboxId)
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)   
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            {            
+                WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loding}&quot;)))
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page1}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected Manual Non-Genuine filter in excursion module&apos;) 
+            }else{
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion group info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }        
+        } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the Manual Non-Genuine inbox&apos;)  
+        }
+    } 
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Not selected  Manual Non-Genuine filter in excursion module&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+        java.lang.Thread.sleep(2000)         </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select Non-Reportable" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${current_filter}&quot;)))
+        WDS.log.info(&apos;clicking the excursion filter&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${current_filter}&quot;)).click() 
+        java.lang.Thread.sleep(2000) 
+        WDS.log.info(&apos;Selecting Non-Reportable filter&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${filterNonReportable}&quot;)))
+		WDS.browser.findElement(pkg.By.xpath(&quot;${filterNonReportable}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for excursion inbox loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxListSpinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check excursion is listed into inbox&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxList}&quot;)))    
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${inboxList}&quot;)).getText().trim()
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)      
+ 
+        if (!inboxData.equals(&quot;No data available&quot;)) 
+        {    
+            WDS.log.info(&apos;Waiting for excursion inbox excursion id loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)))
+            WDS.log.info(&apos;Getting the selected excursion id from the inbox&apos;)   
+            var excursionInboxId = WDS.browser.findElement( pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id inbox &apos;+ excursionInboxId)
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)   
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            {            
+                WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loding}&quot;)))
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page1}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected Non-Reportable filter in excursion module&apos;) 
+            }else{
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion group info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }        
+        } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the Non-Reportable inbox&apos;)  
+        }
+    } 
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Not selected Non-Reportable filter in excursion module&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+        java.lang.Thread.sleep(2000)              </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select Suppressed" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${current_filter}&quot;)))
+        WDS.log.info(&apos;clicking the excursion filter&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${current_filter}&quot;)).click() 
+        java.lang.Thread.sleep(2000) 
+        WDS.log.info(&apos;Selecting Suppressed filter&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${filterSuppressed}&quot;)))
+		WDS.browser.findElement(pkg.By.xpath(&quot;${filterSuppressed}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for excursion inbox loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxListSpinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check excursion is listed into inbox&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxList}&quot;)))    
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${inboxList}&quot;)).getText().trim()
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)      
+ 
+        if (!inboxData.equals(&quot;No data available&quot;)) 
+        {  
+            WDS.log.info(&apos;Waiting for excursion inbox excursion id loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)))
+            WDS.log.info(&apos;Getting the selected excursion id from the inbox&apos;)   
+            var excursionInboxId = WDS.browser.findElement( pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id inbox &apos;+ excursionInboxId)
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)   
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            {            
+                WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loding}&quot;)))
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page1}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected Suppressed filter in excursion module&apos;) 
+            }else{
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion group info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }         
+         } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the Suppressed inbox&apos;)  
+         }
+    } 
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Not selected Suppressed filter in excursion module&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+        java.lang.Thread.sleep(2000)               </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select Case Created" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.MILLISECONDS).ignoring(NSE);
+
+    try 
+    { 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${current_filter}&quot;)))
+        WDS.log.info(&apos;clicking the excursion filter&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${current_filter}&quot;)).click()
+        java.lang.Thread.sleep(2000) 
+        WDS.log.info(&apos;Selecting Case Created filter&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${filterCaseCreated}&quot;))) 
+		WDS.browser.findElement(pkg.By.xpath(&quot;${filterCaseCreated}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for excursion inbox loading to complete&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxListSpinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check excursion is listed into inbox&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inboxList}&quot;)))    
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${inboxList}&quot;)).getText().trim()
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)      
+ 
+        if (!inboxData.equals(&quot;No data available&quot;)) 
+        {  
+            WDS.log.info(&apos;Waiting for excursion inbox excursion id loading to complete&apos;) 
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)))
+            WDS.log.info(&apos;Getting the selected excursion id from the inbox&apos;)   
+            var excursionInboxId = WDS.browser.findElement( pkg.By.xpath(&quot;${inbox_excursion_id}&quot;)).getText() 
+            WDS.log.info(&apos;selected Excursion id inbox &apos;+ excursionInboxId)
+            WDS.log.info(&apos;Getting the selected excursion is Group or not from the inbox&apos;)   
+            var isExcursionGrp = WDS.browser.findElement( pkg.By.xpath(&quot;${isExcursionGroup}&quot;)).getText()
+            if (!isExcursionGrp.equals(&quot;Group&quot;)) 
+            {            
+                WDS.log.info(&apos;Waiting for excursion info page loading to complete&apos;) 
+                wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${excursion_info_loding}&quot;)))
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${id_info_page1}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected Case Created filter in excursion module&apos;) 
+            }else{
+                WDS.log.info(&apos;Checking the inbox selected excursion id &apos;+ excursionInboxId +&apos; with excursion group info page&apos;) 
+                wait.until(conditions.textToBePresentInElement(pkg.By.xpath(&quot;${excursionGroupPageId}&quot;),excursionInboxId))
+                WDS.log.info(&apos;Selected All Excursion filter in excursion module&apos;) 
+            }        
+        } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the cases inbox&apos;)  
+        }
+    } 
+    catch (err) 
+    { 
+        WDS.log.info( &apos;Not selected Case Created filter in excursion module&apos;) 
+        WDS.sampleResult.successful = false
+        WDS.log.error(err.message)
+    } 	
+        WDS.sampleResult.sampleEnd()
+        java.lang.Thread.sleep(2000)               </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="DBoard with HeatMap" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.NANOSECONDS).ignoring(NSE);
+    try 
+    { 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${dashboard_module_link}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for dashboard-spine-excursion-section appearence&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_excursions_spine}&quot;)))
+        WDS.log.info(&apos;Waiting for dashboard-spine-anomalies-section  appearence&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_anomalies_spine}&quot;)))
+        WDS.log.info(&apos;Waiting for dashboard-spine-cases-section  appearence&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_cases_spine}&quot;)))
+        WDS.log.info(&apos;Waiting for Therat map  appearence&apos;)   
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${heatmap_loading}&quot;)))
+        WDS.log.info(&apos;Waiting for System trends  appearence&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${system_trends}&quot;)))
+        WDS.log.info(&apos;Waiting for My watchlist  appearence&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${my_watchlist}&quot;)))
+        WDS.log.info( &apos;Dashboard page record the loading time is successfully done&apos;) 
+    } 
+    catch (err) 
+    { 
+    		WDS.log.info( &apos;Dashboard page record the loading time is falied with Heat map&apos;) 
+    		WDS.sampleResult.successful = false
+            WDS.log.error(err.message)
+    } 	
+      WDS.sampleResult.sampleEnd()
+      WDS.browser.findElement(pkg.By.xpath(&quot;${excursion_module_link}&quot;)).click()       </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="DBoard without HeatMap" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.NANOSECONDS).ignoring(NSE);
+    try 
+    { 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${dashboard_module_link}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for dashboard-spine-excursion-section  appearence&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_excursions_spine}&quot;)))
+        WDS.log.info(&apos;Waiting for dashboard-spine-anomalies-section  appearence&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_anomalies_spine}&quot;)))
+        WDS.log.info(&apos;Waiting for dashboard-spine-cases-section  appearence&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${loading_cases_spine}&quot;)))
+        WDS.log.info(&apos;Waiting for System trends  appearence&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${system_trends}&quot;)))
+        WDS.log.info(&apos;Waiting for My watchlist  appearence&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${my_watchlist}&quot;)))
+        WDS.log.info( &apos;Dashboard page record the loading time is successfully done&apos;) 
+    } 
+    catch (err) 
+    { 
+    		WDS.log.info( &apos;Dashboard page record the loading time is falied with Heat map&apos;) 
+    		WDS.sampleResult.successful = false
+            WDS.log.error(err.message)
+    } 	
+      WDS.sampleResult.sampleEnd()
+      WDS.browser.findElement(pkg.By.xpath(&quot;${excursion_module_link}&quot;)).click()       </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select Reports Module" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.NANOSECONDS).ignoring(NSE);
+    try 
+    { 
+        WDS.log.info(&apos;Ciliking the Reports module link&apos;)
+        WDS.browser.findElement(pkg.By.xpath(&quot;${reports_module_link}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for Excursions by Systems chart loading&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${reports_systems}&quot;)))
+        WDS.log.info(&apos;Waiting for Excursions in Past 12 Months chart loading&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${reports_past12months}&quot;)))
+        WDS.log.info(&apos;Waiting for Excursions by Device Types  chart loading&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${reports_device}&quot;)))
+        WDS.log.info(&apos;Waiting for Excursions Case Status  chart loading&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${reports_cases}&quot;)))
+        WDS.log.info(&apos;Waiting for Bad Actors Types  chart loading&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${reports_badactors}&quot;)))
+        WDS.log.info(&apos;Waiting for Causes chart loading&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${reports_causes}&quot;)))
+        WDS.log.info(&apos;Reports page successfully loaded&apos;)
+    }
+      catch(err){
+        WDS.log.info( &apos;Selecting Reports module is not working&apos;) 
+    		WDS.sampleResult.successful = false
+            WDS.log.error(err.message)
+      }
+    WDS.sampleResult.sampleEnd()</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select Reports Apply Filter" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.NANOSECONDS).ignoring(NSE);
+    try 
+    { 
+        WDS.log.info(&apos;Click Excursion Category Equals or Does not equal dropdown&apos;)
+        WDS.browser.findElement(pkg.By.xpath(&quot;${reportsExcursionCategory}&quot;)).click()
+        WDS.log.info(&apos;Selecting the Excursion Category Equals  from the dropdown&apos;)
+        WDS.browser.findElement(pkg.By.xpath(&quot;${reportsEquals}&quot;)).click()
+        WDS.log.info(&apos;Click Excursion filters dropdown&apos;)
+        WDS.browser.findElement(pkg.By.xpath(&quot;${reportsExcurCategory}&quot;)).click()
+        WDS.log.info(&apos;Selecting the Reportable  from the dropdown&apos;)
+        WDS.browser.findElement(pkg.By.xpath(&quot;${reportsReportable}&quot;)).click()
+        java.lang.Thread.sleep(3000) 
+        WDS.log.info(&apos;Click Apply filter button&apos;)
+        WDS.browser.findElement(pkg.By.xpath(&quot;${applyFilterBtn}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for Excursions by Systems chart loading&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${reports_systems}&quot;)))
+        WDS.log.info(&apos;Waiting for Excursions in Past 12 Months chart loading&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${reports_past12months}&quot;)))
+        WDS.log.info(&apos;Waiting for Excursions by Device Types  chart loading&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${reports_device}&quot;)))
+        WDS.log.info(&apos;Waiting for Excursions Case Status  chart loading&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${reports_cases}&quot;)))
+        WDS.log.info(&apos;Waiting for Bad Actors Types  chart loading&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${reports_badactors}&quot;)))
+        WDS.log.info(&apos;Waiting for Causes chart loading&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${reports_causes}&quot;)))
+        WDS.log.info(&apos;Reports page successfully loaded&apos;)
+
+    }
+      catch(err){
+        WDS.log.info( &apos;Selecting Reports apply filter is not working&apos;) 
+    		WDS.sampleResult.successful = false
+            WDS.log.error(err.message)
+      }
+    WDS.sampleResult.sampleEnd()</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select  Anamolies Module" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.NANOSECONDS).ignoring(NSE);
+    try 
+    { 
+        WDS.log.info(&apos;Ciliking the anomalies module link&apos;)
+        WDS.browser.findElement(pkg.By.xpath(&quot;${anomalies_module_link}&quot;)).click()
+        WDS.sampleResult.sampleStart()
+        WDS.log.info(&apos;Waiting for anomalies inbox fully loaded&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${anomalies_inbox_spinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check anomalies is listed into inbox&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${anomalies_id}&quot;)))    
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${anomalies_id}&quot;)).getText().trim()
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)      
+ 
+        if (!inboxData.equals(&quot;No data available&quot;)) 
+        {
+            WDS.log.info(&apos;Anomalies inbox fully loaded&apos;)
+        } else{
+            WDS.log.info(&apos;WARNING!!! No data available in the anomalies inbox&apos;)  
+        }
+     }
+      catch(err){
+        WDS.log.info( &apos;Selecting aomalies module is not working&apos;) 
+    		WDS.sampleResult.successful = false
+            WDS.log.error(err.message)
+      }
+    WDS.sampleResult.sampleEnd()</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Select plot Anamolies" enabled="true">
+          <stringProp name="WebDriverSampler.script">var pkg = JavaImporter(org.openqa.selenium)
+var timeunit = java.util.concurrent.TimeUnit
+var NSE = org.openqa.selenium.NoSuchElementException.class
+var conditions = org.openqa.selenium.support.ui.ExpectedConditions
+var FWait = org.openqa.selenium.support.ui.FluentWait
+
+var wait = new FWait(WDS.browser).withTimeout(${timeout}, timeunit.SECONDS).pollingEvery(1, timeunit.NANOSECONDS).ignoring(NSE);
+    try 
+    { 
+        WDS.log.info(&apos;Waiting for anomalies filter&apos;) 
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${current_filter}&quot;)))
+        WDS.log.info(&apos;Clicking the anomalies filter&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${current_filter}&quot;)).click() 
+        java.lang.Thread.sleep(2000) 
+        WDS.log.info(&apos;selecting the anomalies Fliter DP filter&apos;) 
+        WDS.browser.findElement(pkg.By.xpath(&quot;${dpFlter}&quot;)).click()
+        WDS.log.info(&apos;Waiting for anomalies inbox fuly loaded&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${anomalies_inbox_spinner}&quot;)))
+        WDS.log.info(&apos;Waiting to check anomalies is listed into inbox&apos;)
+        wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${anomalies_id}&quot;)))    
+        var inboxData =  WDS.browser.findElement(pkg.By.xpath(&quot;${anomalies_id}&quot;)).getText().trim()
+        WDS.log.info(&apos;inboxData=&gt;&apos; +inboxData)      
+ 
+        if (!inboxData.equals(&quot;No data available&quot;)) 
+        {   
+            WDS.log.info(&apos;Getting anomalies inbox count&apos;)
+            var getAnomalyInboxSize = WDS.browser.findElements(pkg.By.xpath(&quot;${anomalies_inbox}&quot;)).size()
+            WDS.log.info(&apos;Number of anomalies in the list : &apos; +getAnomalyInboxSize);
+            var getRandomNum = Math.floor(Math.random() * getAnomalyInboxSize+1);
+            WDS.log.info(&apos;Number of group excursions in the list : &apos; +getRandomNum);
+            WDS.log.info(&apos; Selecting ( &apos;+getRandomNum+&apos; th ) excursion from the list &apos;)
+            WDS.log.info(&apos;Moving to the selecting  anomalies from the inbox&apos;)
+            WDS.browser.executeScript(&quot;arguments[0].scrollIntoView(true);&quot;,WDS.browser.findElement(pkg.By.xpath(&quot;${anomalies_inbox_id}&quot;+getRandomNum+&quot;]&quot;)))
+            WDS.log.info(&apos;Selecting  anomalies from the inbox&apos;)
+            WDS.browser.findElement(pkg.By.xpath(&quot;${anomalies_inbox_id}&quot;+getRandomNum+&quot;]&quot;)).click()
+            wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${viewDetailsBtn}&quot;)))
+            WDS.log.info(&apos;Clicking View Details button&apos;)
+            WDS.browser.findElement(pkg.By.xpath(&quot;${viewDetailsBtn}&quot;)).click()  
+            WDS.sampleResult.sampleStart()
+            var curWindow = WDS.browser.getWindowHandle()
+            var allWindows = WDS.browser.getWindowHandles()
+            for (var i=0; i &lt; allWindows.size(); i++)
+            {
+                var curWinHandle = allWindows.toArray()[i]
+                if (curWinHandle != curWindow)
+                {
+                    WDS.browser.switchTo().window(curWinHandle);
+                    WDS.log.info(&apos;Waiting for View Details page to display&apos;) 
+                    wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${anomalyFullView}&quot;)))        
+                    WDS.log.info(&apos;Waiting for System trends chart to display&apos;) 
+                    wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${anomalyTimeSeries}&quot;)))
+                    WDS.log.info(&apos;Waiting for Historical Anomalies chart to display&apos;)  
+                    wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${anomalyChart}&quot;)))
+                    WDS.log.info(&apos;Waiting for Historical table view to display&apos;)
+                    wait.until(conditions.presenceOfElementLocated(pkg.By.xpath(&quot;${anomalyHistoricalTab}&quot;)))
+                }
+            }
+            WDS.sampleResult.sampleEnd()
+       } else{
+            WDS.sampleResult.sampleStart()
+            WDS.log.info(&apos;WARNING!!! No data available in the anomalies inbox&apos;)
+            WDS.sampleResult.sampleEnd()  
+       }
+    }
+      catch(err){
+        WDS.log.info( &apos;Dashboard page record the loading time is falied with Heat map&apos;) 
+    		WDS.sampleResult.successful = false
+            WDS.log.error(err.message)
+            WDS.sampleResult.sampleEnd()
+      }
+    </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">javascript</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">agg_report.csv</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">SumRep.csv</stringProp>
+          <boolProp name="useGroupName">true</boolProp>
+        </ResultCollector>
+        <hashTree/>
+        <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Duration Assertion" enabled="true">
+          <stringProp name="DurationAssertion.duration">90000</stringProp>
+        </DurationAssertion>
+        <hashTree/>
+        <ResultCollector guiclass="AssertionVisualizer" testclass="ResultCollector" testname="Assertion Results" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree/>
+  </hashTree>
+</jmeterTestPlan>
